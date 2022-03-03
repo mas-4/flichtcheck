@@ -7,7 +7,8 @@
 
 Config *Config::getInstance()
 {
-    return nullptr;
+    if (m_instance == nullptr) m_instance = new Config();
+    return m_instance;
 }
 
 Config::Config()
@@ -33,7 +34,7 @@ Config::Config()
     }
 }
 
-std::string Config::get(std::string key)
+std::string Config::get(const std::string& key)
 {
     if (m_configMap.find(key) != m_configMap.end()) return m_configMap[key];
     else

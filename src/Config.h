@@ -6,14 +6,14 @@
 
 class Config
 {
-private:
-    static Config *instance;
-    std::map<std::string, std::string> m_configMap;
+protected:
     Config();
+    static Config *m_instance;
+    std::map<std::string, std::string> m_configMap;
 
 public:
-    static Config *getInstance();
-    std::string get(std::string key);
+    static Config& getInstance();
+    std::string get(const std::string& key);
 };
 
 
