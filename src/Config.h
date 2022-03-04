@@ -6,15 +6,12 @@
 
 class Config
 {
-protected:
-    Config();
-    static Config *m_instance;
+private:
     std::map<std::string, std::string> m_configMap;
 
 public:
-    static Config& getInstance();
+    Config();
     std::string get(const std::string& key);
 };
-
 
 #endif//FLIGHTCHECK_CONFIG_H

@@ -5,18 +5,12 @@
 #include "Config.h"
 #include <fstream>
 
-Config *Config::getInstance()
-{
-    if (m_instance == nullptr) m_instance = new Config();
-    return m_instance;
-}
-
 Config::Config()
 {
     std::string home = getenv("HOME");
     std::string m_configFile = home + "/.config/flightcheck/config";
     m_configMap = {
-            {"directory", home + "flightcheck"}};
+            {"directory", home + "/flightcheck"}};
     // open file
     std::ifstream file(m_configFile);
     if (file.is_open())
