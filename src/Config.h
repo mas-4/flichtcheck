@@ -8,6 +8,7 @@ class Config
 {
 private:
     std::map<std::string, std::string> m_configMap;
+    static void validate(const std::string &key, std::string &value);
 
 public:
     Config();
